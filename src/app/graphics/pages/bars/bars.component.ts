@@ -32,13 +32,17 @@ export class BarsComponent  {
     },
   };
   public barChartType: ChartType = 'bar';
+
   public barChartPlugins = [DataLabelsPlugin];
  
   public barChartData: ChartData<'bar'> = {
-    labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
+
+    labels: ['2020', '2021', '2023', '2024', '2025', '2026', '2027'],
+
     datasets: [
-      { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-      { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' },
+      { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A', backgroundColor: '#ED5F76' },
+      { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B', backgroundColor: '#F763C4' },
+      { data: [0, 44, 2, 44, 6, 40, 20], label: 'Series C'   , backgroundColor: '#D665E0' } ,
     ],
   };
  
@@ -63,22 +67,16 @@ export class BarsComponent  {
     console.log(event, active);
   }
  
-  
+
   public randomize(): void {
-    // Only Change 3 values
-    this.barChartData.datasets[0].data = [
-      Math.round(Math.random() * 100),
-      59,
-      80,
-      Math.round(Math.random() * 100),
-      56,
-      Math.round(Math.random() * 100),
-      40,
-    ];
- 
+    this.barChartData.datasets.forEach((bar) => {
+      bar.data = bar.data?.map(() => Math.round(Math.random() * 100));
+    });
     this.chart?.update();
   }
-}
+ 
+  }
+
 
 
 

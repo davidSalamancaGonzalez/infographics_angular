@@ -1,1 +1,18 @@
-<p>graphic-bar works!</p>
+<!-- <h1>Bar chart</h1> -->
+<!-- <hr> -->
+<div class="row">
+    <div class="col">
+        
+        <div style="display: block">
+            <canvas
+            baseChart
+            [data]="barChartData"
+            [options]="barChartOptions"
+            [type]="barChartType">
+        </canvas>
+      </div>
+
+      <button class="btn btn-primary float-end" (click)="randomize()">Update</button>
+
+    </div>
+  </div>

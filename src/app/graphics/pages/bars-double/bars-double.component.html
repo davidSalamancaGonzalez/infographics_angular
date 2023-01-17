@@ -1,1 +1,14 @@
-<p>bars-double works!</p>
+<h1>Double chart bars</h1>
+<hr>
+<div class="row">
+
+    <div class="col-md-6">
+        <app-graphic-bar [horizontal] = "true" 
+                         [barChartData] = 'productData'   ></app-graphic-bar>
+    </div>
+
+    <div class="col-md-6">
+        <app-graphic-bar [barChartData] = 'providersData'></app-graphic-bar>
+    </div>
+
+</div>
